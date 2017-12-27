@@ -1,0 +1,9 @@
+-------Windows System----------
+0. open the terminal (in windows we used to use "cmd", now it becomes "powershell")
+    press win,type "p".
+1. pwd    print working directory = tell me where I am.
+    what is a directory?---directory=folder.
+2. cd   change directory
+    cd ~    if we are lost,and we type in "cd ~",it will take us back home.(the default directory)
+    cd\   go to directly the root of C drive
+    cd..    go to one folder up(go to parent folder)
