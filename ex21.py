@@ -31,3 +31,12 @@ print "Here is a puzzle."
 what = add(age,subtract(height,multiply(weight,divide(iq,2))))
 
 print "That becomes:",what,"Can you do it by hand? "
+
+#Question2
+aa = divide(iq,2)
+bb = multiply(weight,aa)
+cc = subtract(height,bb)
+dd = add(age,cc)
+print "that becomes also %d." %dd
+
+
