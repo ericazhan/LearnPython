@@ -15,7 +15,7 @@ def left_1():
 def left_2():
 	print "There's a possibility to go back to the portail,do you want to seize it? "
 	seize = raw_input("y or n?\n>")
-	if seize == "y" or "Y":
+	if seize == "y":
 			print "Ok,you get what you want."
 			#go to start
 			start()
@@ -46,28 +46,74 @@ def right_3():
 	wordd = raw_input(">")
 	if len(wordd) > 7:
 		print "YOU WIN!"
+		exit(0)
 	else:
 		print "Pity,just one more effort.."
-		exit()
+		exit(0)
 
 def right_2():
 		
-		goals = ["carrier","development","entertainment","finance","health","contribution","relationship"]
-		print "Now it's new year!Do you make your goals?"
-		print "You have 7 different goal:"
-		print "\n1 carrier\n2 development\n 3entertainment\n4 finance\n5 health\n6 contribution\n7 relationship"
+	goals = ["carrier","development","entertainment","finance","health","contribution","relationship"]
+	print "Now it's new year!Do you make your goals?"
+	print "You have 7 different goal:"
+	for i in goals:
+		print "\n\t* %s" %i #如果没错的话，这行=下一行内容
+		#print "\n1 carrier\n2 development\n 3entertainment\n4 finance\n5 health\n6 contribution\n7 relationship"
 		
-		goal1 = int(raw_input("What you want to do the most in the year 2018?          "))
-		def plan(a):
-			content = goal1[a-1]
-			print "The thing you want to do is of order %d, in the position %d." %(a,(a-1))
-			print "The thing you want to do most is %r" %content
+	def plan(a):
+		content = goals[a-1]
+		print "The thing you want to do is of order %d, in the position %d." %(a,(a-1))
+		print "The thing you want to do most is %r" %content
 	
-		if goal1 in range(1,8):
-			plan(goal1)
-			#if goal1 in 如果目标前三有develop,
+	while True:
+		goal1 = raw_input("What you want to do the most in the year 2018?          ")
+		
+		if goal1.isdigit() is True:
+			goal11 = int(goal1)
+			if goal11 in range(1,8):
+				plan(goal11)
+				print "-------------"
+				print "Don't forget what you want to do in 2018!"
+				print "You are about to win! But not yet~"
+				right_3()
+			else:
+				print "You should give me a number from 1 to 7"
 		else:
-			print "You should give me a number from 1 to 7"
+			print "Man, learn to type a number."
+			#回到上一个分支
+			
+			
+def right_1():
+	print "This is the maze!"
+	left_2()
+
+
+def right_0():
+	print 'First thing: you are exactly in the "right" way !'
+	print "But it's not easy to win the game!"
+	
+	while True:
+		add1 =raw_input("3+2=? \n>")
+		if add1 == "5":
+			print "You could now choose among the 3 doors, 1,2,3:"
+			rdoor = raw_input(">")
+			while True:
+				if rdoor == "1":
+					right_1()
+				elif rdoor == "2":
+					right_2()
+				elif rdoor == "3":
+					right_3()
+				else:
+					print "You keep typing,keep typing."	
+					
+			
+		else:
+			print "Really?Are you kidding me?"
+			
+			
+	
+
 
 
 def start():
@@ -83,9 +129,9 @@ def start():
 	if next == "left":
 		left_0()
 	elif next == "right":
-		righ_2()
+		right_0()
 	else:
-		dead("You stumble around the room until you starve.")
+		print "You stumble around the room until you starve."
 		
 
 start()
