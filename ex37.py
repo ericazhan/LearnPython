@@ -12,3 +12,12 @@ del mylist
 mylist = ["a","b","c","d"]
 mylist.pop(0)
 print mylist
+
+#or,with,as,global,elif
+def light():
+	global aa  #make aa global
+	aa = "life is beautiful."
+	print aa
+
+light()
+print aa,"global keyword works!"
