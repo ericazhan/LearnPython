@@ -21,3 +21,8 @@ def light():
 
 light()
 print aa,"global keyword works!"
+
+#break,except,import,print,class
+
+
+#exec,in,raise,continue,finally
