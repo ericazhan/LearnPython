@@ -22,6 +22,15 @@ def light():
 light()
 print aa,"global keyword works!"
 
+#assert,if,else,pass,yield
+for ii in 'python':
+	if ii =='h':
+		pass
+		#print 'This is pass block'
+	print 'Current Letter:',ii
+print "good bye!"
+
+
 #break,except,import,print,class
 
 
