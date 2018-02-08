@@ -26,12 +26,38 @@ print aa,"global keyword works!"
 for ii in 'python':
 	if ii =='h':
 		pass
-		#print 'This is pass block'
+		print 'This is pass block'
 	print 'Current Letter:',ii
 print "good bye!"
 
 
 #break,except,import,print,class
+for ii in 'python':
+	if ii == 'h':
+		print 'H commes!' #这句会打印出来，因为在break之前出现
+		break
+		print 'current one:' #这个不会被打印出来，break一出现，程序就断了
+	print 'Current Letter:',ii
+print 'goodbye'
+
+for ii in 'python':
+	if ii =='h':
+		print 'H commes!'
+		continue
+		print 'will I appear?' #这句没有打印出来
+	print 'Current Letter:',ii
+print "good bye!"
 
 
 #exec,in,raise,continue,finally
+while True:
+	value = raw_input("\nEnter a number:")
+	
+	if value == 'q':
+		print "Exiting program."
+		break
+	if not value.isdigit():
+		print "Enter digits only"
+		continue
+	value = int(value)
+	print "Cube of ",value,"is",value**3
