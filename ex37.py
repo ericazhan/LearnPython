@@ -48,6 +48,16 @@ for ii in 'python':
 	print 'Current Letter:',ii
 print "good bye!"
 
+class Rocket():
+	def _init_(self):
+		self.x=0
+		self.y=0
+		
+	def move_up(self):
+		self.y +=1
+
+my_rocket = Rocket()
+print my_rocket
 
 #exec,in,raise,continue,finally
 while True:
