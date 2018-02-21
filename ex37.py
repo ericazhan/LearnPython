@@ -71,3 +71,57 @@ while True:
 		continue
 	value = int(value)
 	print "Cube of ",value,"is",value**3
+	
+def factorial(n):
+    if  not isinstance(n, int):
+        raise RuntimeError("Argument must be int")
+
+    if n < 0:
+        raise RuntimeError("Argument must be >= 0")
+
+    f = 1
+    for i in range(n):
+        f *= n
+        n -= 1
+
+    return f
+
+nn = int(raw_input("factorial/n>"))
+factorial(nn)  #如果nn是整数，ok，不报错，但也不会出来任何东西，因为没有print命令。如果不是整数，报错，程序停止。
+
+try:
+    print("Factorial of 4 is:", factorial(4))
+    print("Factorial of 12 is:", factorial("12"))
+except RuntimeError:
+    print("Invalid Input")
+	
+
+n = 5
+# Test one.
+if n == 5:
+    print 'Yay ==!'
+
+# Test two.
+if n is 5:
+    print 'Yay is!'
+	
+L = []
+L.append(1)
+if L == [1]:
+    print 'Yay! == =='
+# Holds true, but...
+
+if L is [1]:
+    print 'Yay! is is '
+# Doesn't.
+
+x = [1, 2, 3]
+y = [1, 2, 3]
+print x is y
+print x == y
+
+def addEm(x, y, z):
+    #return x+y+z   
+    print 'the answer is', x+y+z   #return表示方程的结束！在return后面的句子被忽略。
+	
+addEm(1,2,3)
