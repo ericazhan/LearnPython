@@ -41,7 +41,7 @@ def convert(snippet,phrase):
 		param_count = random.randint(1,3)  #返回1 or 2 or 3
 		param_names.append(','.join(random.sample(WORDS,param_count)))
 		
-	for sentence in snippet,phrase:
+	for sentence in snippet,phrase: #两遍循环
 		result = sentence[:]
 		
 		#fake class names
@@ -56,12 +56,13 @@ def convert(snippet,phrase):
 		for word in param_names:
 			result = result.replace("@@@",word,1)
 			
-		results.append(result)
-		
-	return results
+		results.append(result) #result只是清单results的一个元素。因为是两遍循环，因此清单results里含有两个result.
+	
+	return results #results是一个包含两个string的list
+	
 	
 
-#keep going until they hit CTRL-D
+#keep going until they hit CTRL-Z
 try:
 	while True:
 		snippets = PHRASES.keys()  #调出pharase这个dictionary的所有keys,无序排列;snippets是完整的字典key list
@@ -69,7 +70,9 @@ try:
 		
 		for snippet in snippets: #所以我们现在有了一个小一点的叫做snippets的list，这个列表的每个元素是一个key，叫做snippet
 			phrase = PHRASES[snippet] #大写的PHARASE是个字典，小写的phrase是字典的部分value
-			question,answer = convert(snippet,phrase)
+			question,answer = convert(snippet,phrase) #用和元素同样数目的变量 可以 提取 列表。
+			#question= convert(snippet,phrase) #
+			#answer = convert(snippet,phrase) #
 			if PHRASE_FIRST:
 				question,answer = answer,question
 				
@@ -81,7 +84,14 @@ except EOFError:
 	print "\nBye"
 	
 
-
+DEBUG = 1
+if DEBUG:
+  print "snippet: " , snippet
+  print "phrase: ", phrase
+  print "results:",convert(snippet,phrase) #不能输results，那是方程里的代名，不是它的变量名
+  #print "class names: ", class_names
+  #print "other names: " , other_names
+  #print "param names: ", param_names
 
 
 
